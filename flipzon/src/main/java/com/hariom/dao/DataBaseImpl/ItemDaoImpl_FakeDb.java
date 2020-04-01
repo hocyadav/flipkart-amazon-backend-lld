@@ -4,12 +4,14 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.hariom.dao.ItemDao;
 import com.hariom.entity.Item;
 
 @Repository
+@Qualifier("fakeDb")
 public class ItemDaoImpl_FakeDb implements ItemDao {
 	private static Map<Integer, Item> items;
 	

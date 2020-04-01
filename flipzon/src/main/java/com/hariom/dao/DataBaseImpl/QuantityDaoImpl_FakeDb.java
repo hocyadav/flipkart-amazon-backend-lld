@@ -4,12 +4,14 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.hariom.dao.QuantityDao;
 import com.hariom.entity.Quantity;
 
 @Repository
+@Qualifier("fakeDb")
 public class QuantityDaoImpl_FakeDb implements QuantityDao {
 	private static Map<Integer, Quantity> quantity;
 	
@@ -37,7 +39,7 @@ public class QuantityDaoImpl_FakeDb implements QuantityDao {
 	public void updateQuantity(Quantity quan) {
 		Quantity qq = quantity.get(quan.getItemId());
 		
-		qq.setTotalQuantity(quan.getTotalQuantity());
+		qq.setTotalQuantity(qq.getTotalQuantity() + quan.getTotalQuantity());//old quantity + new quantity
 		quantity.put(quan.getItemId(), qq);
 	}
 	

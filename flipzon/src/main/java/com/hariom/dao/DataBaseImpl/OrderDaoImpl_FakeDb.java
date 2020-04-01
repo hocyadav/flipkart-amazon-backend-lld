@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.hariom.dao.OrderDao;
@@ -14,6 +15,7 @@ import com.hariom.entity.Order;
 import com.hariom.entity.Quantity;
 
 @Repository
+@Qualifier("fakeDb")
 public class OrderDaoImpl_FakeDb implements OrderDao {
 	private static Map<Integer, Order> orders;
 	
@@ -44,7 +46,7 @@ public class OrderDaoImpl_FakeDb implements OrderDao {
 	//new order
 	//1. add in user-order db
 	//2. add in order db
-	//3. iterarte over item and decrement item count in quantity db
+	//3. Iterate over item and decrement item count in quantity db
 	public void insertOrder(Order order) {
 		orders.put(order.getOrderId(), order);
 	}

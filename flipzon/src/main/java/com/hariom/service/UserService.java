@@ -3,6 +3,7 @@ package com.hariom.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.hariom.dao.UserDao;
@@ -12,6 +13,7 @@ import com.hariom.entity.User;
 public class UserService {
 	
 	@Autowired
+	@Qualifier("fakeDb")
 	private UserDao userDao;
 	
 	public Collection<User> getAllUser(){

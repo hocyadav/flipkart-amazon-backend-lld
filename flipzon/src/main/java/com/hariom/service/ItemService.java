@@ -3,6 +3,7 @@ package com.hariom.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -14,6 +15,7 @@ import com.hariom.entity.Quantity;
 public class ItemService {
 	
 	@Autowired
+	@Qualifier("fakeDb")
 	private ItemDao itemDaoObj;
 	
 	@Autowired
@@ -47,7 +49,7 @@ public class ItemService {
 	//2. insert into item db
 	public void insertItem(Item item){
 		
-		Quantity qq = new Quantity(item.getItemId(), 1);
+		Quantity qq = new Quantity(item.getItemId(), 1);//for new item default quantity is 1
 		quantityService.insertQuantity(qq);
 		
         this.itemDaoObj.insertItem(item);
