@@ -15,7 +15,7 @@ import com.hariom.entity.Quantity;
 public class ItemService {
 	
 	@Autowired
-	@Qualifier("fakeDb")
+	@Qualifier("postgresDb")
 	private ItemDao itemDaoObj;
 	
 	@Autowired
