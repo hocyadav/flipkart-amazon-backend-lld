@@ -17,7 +17,7 @@ public class ItemDaoImpl_FakeDb implements ItemDao {
 	
 	private static Map<Integer, Item> items;
 	
-	static {									//add some dummy data
+	static {									//data from postgres db
 		items = new HashMap<Integer, Item>(){
 			{
 				put(1, new Item(1, "Item1 from postgres db", 59));

@@ -13,6 +13,7 @@ import com.hariom.dao.OrderDao;
 import com.hariom.entity.Item;
 import com.hariom.entity.Order;
 import com.hariom.entity.Quantity;
+import com.hariom.util.DateTimeUtil;
 
 @Repository
 @Qualifier("fakeDb")
@@ -26,10 +27,10 @@ public class OrderDaoImpl_FakeDb implements OrderDao {
 				list.add(new Quantity(1, 2));
 				list.add(new Quantity(2, 4));
 				
-				put(1, new Order(1, 1, list, "Cash On delivery"));
-				put(2, new Order(2, 1, list, "Paypal"));
-				put(3, new Order(3, 2, list, "Credit card"));
-				put(4, new Order(4, 3, list, "Cash On delivery"));
+				put(1, new Order(1, 1, list, "Cash On delivery", "1/04/2020", "2/04/2020", 100));
+				put(2, new Order(2, 1, list, "Paypal", "1/04/2020", "2/04/2020", 300));
+				put(3, new Order(3, 2, list, "Credit card", "1/04/2020", "2/04/2020", 1400));
+				put(4, new Order(4, 3, list, "Cash On delivery", "1/04/2020", "2/04/2020", 999));
 			}
 		};
 	}
@@ -48,6 +49,13 @@ public class OrderDaoImpl_FakeDb implements OrderDao {
 	//2. add in order db
 	//3. Iterate over item and decrement item count in quantity db
 	public void insertOrder(Order order) {
+		String orderDate = DateTimeUtil.orderDateTime();
+		order.setOrderDate(orderDate);
+		
+		String deliveryDate = DateTimeUtil.deliveryDateTime();
+		order.setDeliveryDate(deliveryDate);
+		
+		order.setTotalPrice(1999);
 		orders.put(order.getOrderId(), order);
 	}
 	

@@ -6,18 +6,29 @@ public class Order {
 	int orderId;
 	int userId;
 	List<Quantity> listOfItem;
+	int totalPrice;//TODO : create new class and Order + price as single object : json can handle invalid request
 	String payementMode;
-	//int totalPrice;//TODO : create new class and Order + price as single object 
+	String orderDate;
+	String deliveryDate;
 	
-	public Order(int orderId, int userId, List<Quantity> listOfItem, String payementMode) {
-		super();
-		this.orderId = orderId;
-		this.userId = userId;
-		this.listOfItem = listOfItem;
-		this.payementMode = payementMode;
+	public Order(int orderId, 
+				int userId, 
+				List<Quantity> listOfItem, 
+				String payementMode, 
+				String orderDate, 
+				String deliveryDate,
+				int totalprice) {
+		
+		this.orderId 		= orderId;
+		this.userId 		= userId;
+		this.listOfItem 	= listOfItem;
+		this.payementMode 	= payementMode;
+		this.orderDate 		= orderDate;
+		this.deliveryDate 	= deliveryDate;
+		this.totalPrice 	= totalprice;
+		
 	}
 	public Order() {//default constructor
-		super();
 	}
 
 	public int getOrderId() {
@@ -41,8 +52,28 @@ public class Order {
 	public String getPayementMode() {
 		return payementMode;
 	}
+	public int getTotalPrice() {
+		return totalPrice;
+	}
+	public void setTotalPrice(int totalPrice) {
+		this.totalPrice = totalPrice;
+	}
 	public void setPayementMode(String payementMode) {
 		this.payementMode = payementMode;
 	}
+	public String getOrderDate() {
+		return orderDate;
+	}
+	public void setOrderDate(String orderDate) {
+		this.orderDate = orderDate;
+	}
+	
+	public String getDeliveryDate() {
+		return deliveryDate;
+	}
+	public void setDeliveryDate(String deliveryDate) {
+		this.deliveryDate = deliveryDate;
+	}
+	
 
 }
