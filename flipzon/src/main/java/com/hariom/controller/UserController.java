@@ -43,4 +43,5 @@ public class UserController {
 		userService.insertUser(user);
 	}
 	
+	
 }
