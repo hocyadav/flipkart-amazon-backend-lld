@@ -25,6 +25,9 @@ public class OrderService {
 		return orderDao.getOrderById(id);
 	}
 	
+	//new order
+	//1. check for quantity count : if 0 return out of stock and dont add, 
+	//else return item with left quatity
 	public void insertOrder(Order order) {
 		orderDao.insertOrder(order);
 	}
