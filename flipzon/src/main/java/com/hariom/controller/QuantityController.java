@@ -38,11 +38,12 @@ public class QuantityController {
 		this.quantityService.updateQuantity(quan);
 	}
 	
-	//add new Quantity
-	@RequestMapping(method = RequestMethod.POST,
-					consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void insertQuantity(@RequestBody Quantity quan) {
-		this.quantityService.insertQuantity(quan);
-	}
+	//api Commented : add new Quantity - we cant add quantity directly(automatic added when new item added into db), 
+	
+//	@RequestMapping(method = RequestMethod.POST,
+//					consumes = MediaType.APPLICATION_JSON_VALUE)
+//	public void insertQuantity(@RequestBody Quantity quan) {
+//		this.quantityService.insertQuantity(quan);
+//	}
 	
 }
