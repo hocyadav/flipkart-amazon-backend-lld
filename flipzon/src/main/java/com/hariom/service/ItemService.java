@@ -27,7 +27,13 @@ public class ItemService {
         return this.itemDaoObj.getItemById(id); 
     }
 	
+	//remove item
+	//1. remove from quantity db
+	//2. remove from item db
 	public void removeItemById(int id) {
+		
+		quantityService.removeQuantity(id);
+		
         this.itemDaoObj.removeItemById(id);
     }
 	
