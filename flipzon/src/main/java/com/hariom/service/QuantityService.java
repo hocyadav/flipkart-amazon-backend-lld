@@ -32,4 +32,9 @@ public class QuantityService {
 		this.quqQuantityDao.insertQuantity(quan);
 	}
 	
+	//remove quantity : dont impl in controller component 
+	public void removeQuantity(int id) {
+		this.quqQuantityDao.removeQuantityById(id);
+	}
+	
 }

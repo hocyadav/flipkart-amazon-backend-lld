@@ -47,7 +47,7 @@ public class ItemService {
 	//2. insert into item db
 	public void insertItem(Item item){
 		
-		Quantity qq = new Quantity(item.getId(), 1);
+		Quantity qq = new Quantity(item.getItemId(), 1);
 		quantityService.insertQuantity(qq);
 		
         this.itemDaoObj.insertItem(item);

@@ -2,12 +2,12 @@ package com.hariom.entity;
 
 public class Quantity {
 	int itemId;
-	int quantity;
+	int totalQuantity;
 	
 	public Quantity(int itemId, int quantity) {
 		super();
 		this.itemId = itemId;
-		this.quantity = quantity;
+		this.totalQuantity = quantity;
 	}
 	public Quantity() {	//default constructor 
 		
@@ -19,11 +19,11 @@ public class Quantity {
 	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
-	public int getQuantity() {
-		return quantity;
+	public int getTotalQuantity() {
+		return totalQuantity;
 	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public void setTotalQuantity(int quantity) {
+		this.totalQuantity = quantity;
 	}
 	
 }

@@ -1,45 +1,43 @@
 package com.hariom.entity;
 
-import org.springframework.boot.orm.jpa.EntityScan;
 
-@EntityScan
 public class Item {
-	int id;
-	String name;
-	int price;
+	int 	itemId;
+	String 	itemName;
+	int 	itemPrice;
 	
 	public Item(int id, String name, int price) {
 		super();
-		this.id = id;
-		this.name = name;
-		this.price = price;
+		this.itemId 	= id;
+		this.itemName 	= name;
+		this.itemPrice 	= price;
 	}
 	
 	public Item() {
 		
 	}
 
-	public int getId() {
-		return id;
+	public int getItemId() {
+		return itemId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setItemId(int id) {
+		this.itemId = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getItemName() {
+		return itemName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setItemName(String name) {
+		this.itemName = name;
 	}
 
-	public int getPrice() {
-		return price;
+	public int getItemPrice() {
+		return itemPrice;
 	}
 
-	public void setPrice(int price) {
-		this.price = price;
+	public void setItemPrice(int price) {
+		this.itemPrice = price;
 	}
 }

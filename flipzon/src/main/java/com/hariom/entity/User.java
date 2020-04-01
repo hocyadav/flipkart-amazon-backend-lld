@@ -2,14 +2,14 @@ package com.hariom.entity;
 
 public class User {
 	int userId;
-	String name;
-	String email;
+	String userName;
+	String userEmail;
 	
 	public User(int userId, String name, String email) {
 		super();
 		this.userId = userId;
-		this.name = name;
-		this.email = email;
+		this.userName = name;
+		this.userEmail = email;
 	}
 	
 	public User() {
@@ -24,20 +24,20 @@ public class User {
 		this.userId = userId;
 	}
 
-	public String getName() {
-		return name;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setUserName(String name) {
+		this.userName = name;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUserEmail() {
+		return userEmail;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUserEmail(String email) {
+		this.userEmail = email;
 	}
 	
 	

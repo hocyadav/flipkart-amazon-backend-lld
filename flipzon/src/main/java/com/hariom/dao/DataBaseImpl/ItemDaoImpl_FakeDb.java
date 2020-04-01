@@ -39,17 +39,17 @@ public class ItemDaoImpl_FakeDb implements ItemDao {
 
     //update old data
     public void updateItem(Item item){
-    	Item it = items.get(item.getId());
+    	Item it = items.get(item.getItemId());
     	
-    	it.setName(item.getName());
-    	it.setPrice(item.getPrice());
+    	it.setItemName(item.getItemName());
+    	it.setItemPrice(item.getItemPrice());
     	
-        items.put(it.getId(), it);
+        items.put(it.getItemId(), it);
     }
 
     //add new data
     public void insertItem(Item item){
-        items.put(item.getId(), item);
+        items.put(item.getItemId(), item);
     }
 	
 }

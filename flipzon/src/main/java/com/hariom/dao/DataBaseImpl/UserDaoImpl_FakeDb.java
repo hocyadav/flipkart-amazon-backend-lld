@@ -36,8 +36,8 @@ private static Map<Integer, User> users;
 	public void updateUser(User user) {
 		User u = users.get(user.getUserId());
 		
-		u.setName(user.getName());
-		u.setEmail(user.getEmail());
+		u.setUserName(user.getUserName());
+		u.setUserEmail(user.getUserEmail());
 		
 		users.put(user.getUserId(), u);
 	}

@@ -37,7 +37,7 @@ public class QuantityDaoImpl_FakeDb implements QuantityDao {
 	public void updateQuantity(Quantity quan) {
 		Quantity qq = quantity.get(quan.getItemId());
 		
-		qq.setQuantity(quan.getQuantity());
+		qq.setTotalQuantity(quan.getTotalQuantity());
 		quantity.put(quan.getItemId(), qq);
 	}
 	
