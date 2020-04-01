@@ -1,5 +1,8 @@
 package com.hariom.entity;
 
+import org.springframework.boot.orm.jpa.EntityScan;
+
+@EntityScan
 public class Item {
 	int id;
 	String name;

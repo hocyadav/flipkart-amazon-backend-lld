@@ -1,4 +1,4 @@
-package com.hariom.dao;
+package com.hariom.dao.DataBaseImpl;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -6,13 +6,14 @@ import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
+import com.hariom.dao.ItemDao;
 import com.hariom.entity.Item;
 
 @Repository
-public class FakeDbItemDaoImpl implements ItemDao {
+public class ItemDaoImpl_FakeDb implements ItemDao {
 	private static Map<Integer, Item> items;
 	
-	static {									//dummy data
+	static {									//add some dummy data
 		items = new HashMap<Integer, Item>(){
 			{
 				put(1, new Item(1, "Item1", 59));
@@ -24,17 +25,19 @@ public class FakeDbItemDaoImpl implements ItemDao {
 	}
 	
 	public Collection<Item> getAllItems(){
-        return this.items.values();
+        return items.values();
     }
 	
     public Item getItemById(int id){
-        return this.items.get(id); 
+        return items.get(id); 
     }
 
+    //remove data
     public void removeItemById(int id) {
-        this.items.remove(id);
+        items.remove(id);
     }
 
+    //update old data
     public void updateItem(Item item){
     	Item it = items.get(item.getId());
     	
@@ -44,12 +47,9 @@ public class FakeDbItemDaoImpl implements ItemDao {
         items.put(it.getId(), it);
     }
 
-    public void insertItemToDb(Item student) {
-        this.items.put(student.getId(), student);
-    }
-    
+    //add new data
     public void insertItem(Item item){
-        this.items.put(item.getId(), item);
+        items.put(item.getId(), item);
     }
 	
 }

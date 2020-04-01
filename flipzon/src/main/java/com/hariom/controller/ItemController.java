@@ -13,6 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hariom.entity.Item;
 import com.hariom.service.ItemService;
 
+/**
+ * 
+ * @author Hariom Yadav | 01-Apr-2020
+ *
+ */
+
 @RestController
 @RequestMapping("/item")
 public class ItemController {
@@ -37,14 +43,14 @@ public class ItemController {
         this.itemServiceObj.removeItemById(id);
     }
 	
-	//update old data
+	//update old Item
 	@RequestMapping(method = RequestMethod.PUT, 
 					consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void updateItem(@RequestBody Item item){
     	this.itemServiceObj.updateItem(item);
     }
 	
-	//adding new data
+	//adding new Item
     @RequestMapping(method = RequestMethod.POST, 
     				consumes = MediaType.APPLICATION_JSON_VALUE)
     public void insertItem(@RequestBody Item item){

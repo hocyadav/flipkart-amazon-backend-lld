@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import com.hariom.entity.Item;
 
+
 public interface ItemDao {
 
 	Collection<Item> getAllItems();
@@ -13,8 +14,6 @@ public interface ItemDao {
 	void removeItemById(int id);
 
 	void updateItem(Item item);
-
-	void insertItemToDb(Item student);
 
 	void insertItem(Item item);
 
