@@ -16,6 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hariom.entity.Order;
 import com.hariom.entity.User;
 import com.hariom.service.UserService;
+/**
+ * 
+ * @author Hariom Yadav | 01-Apr-2020
+ *
+ */
 
 @RestController
 @RequestMapping("/user")

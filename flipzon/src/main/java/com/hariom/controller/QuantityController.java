@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hariom.entity.Quantity;
 import com.hariom.service.QuantityService;
+/**
+ * 
+ * @author Hariom Yadav | 01-Apr-2020
+ *
+ */
 
 @RestController
 @RequestMapping("/quantity")

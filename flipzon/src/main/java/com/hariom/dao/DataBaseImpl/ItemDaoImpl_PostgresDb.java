@@ -9,19 +9,22 @@ import org.springframework.stereotype.Repository;
 
 import com.hariom.dao.ItemDao;
 import com.hariom.entity.Item;
+/**
+ * 
+ * @author Hariom Yadav | 01-Apr-2020
+ *
+ */
 
 @Repository
-@Qualifier("fakeDb")
+@Qualifier("postgresDb")
 public class ItemDaoImpl_PostgresDb implements ItemDao {
 	private static Map<Integer, Item> items;
 	
 	static {									//add some dummy data
 		items = new HashMap<Integer, Item>(){
 			{
-				put(1, new Item(1, "Item1", 59));
-				put(2, new Item(2, "Item1", 119));
-				put(3, new Item(3, "Item1", 91));
-				put(4, new Item(4, "Item1", 900));
+				put(1, new Item(1, "Item1 from postgres db", 59));
+				put(2, new Item(2, "Item2 from postgres db", 119));
 			}
 		};
 	}

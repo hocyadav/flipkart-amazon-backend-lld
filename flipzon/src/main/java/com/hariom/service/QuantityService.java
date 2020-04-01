@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 
 import com.hariom.dao.QuantityDao;
 import com.hariom.entity.Quantity;
+/**
+ * 
+ * @author Hariom Yadav | 01-Apr-2020
+ *
+ */
 
 @Service
 public class QuantityService {

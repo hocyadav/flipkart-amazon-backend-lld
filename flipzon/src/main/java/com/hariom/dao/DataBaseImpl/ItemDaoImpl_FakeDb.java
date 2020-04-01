@@ -9,9 +9,14 @@ import org.springframework.stereotype.Repository;
 
 import com.hariom.dao.ItemDao;
 import com.hariom.entity.Item;
+/**
+ * 
+ * @author Hariom Yadav | 01-Apr-2020
+ *
+ */
 
 @Repository
-@Qualifier("postgresDb")
+@Qualifier("fakeDb")
 public class ItemDaoImpl_FakeDb implements ItemDao {
 	//postgres data base connection
 	
@@ -20,8 +25,10 @@ public class ItemDaoImpl_FakeDb implements ItemDao {
 	static {									//data from postgres db
 		items = new HashMap<Integer, Item>(){
 			{
-				put(1, new Item(1, "Item1 from postgres db", 59));
-				put(2, new Item(2, "Item2 from postgres db", 119));
+				put(1, new Item(1, "iPhone 7 pro", 75000));
+				put(2, new Item(2, "Moto 360 smart watch", 12500));
+				put(3, new Item(3, "Bedsheet", 1500));
+				put(4, new Item(4, "OnePlus 7 pro", 39999));
 			}
 		};
 	}

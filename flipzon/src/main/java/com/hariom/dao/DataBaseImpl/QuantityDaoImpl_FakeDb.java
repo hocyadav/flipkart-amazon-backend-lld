@@ -9,6 +9,11 @@ import org.springframework.stereotype.Repository;
 
 import com.hariom.dao.QuantityDao;
 import com.hariom.entity.Quantity;
+/**
+ * 
+ * @author Hariom Yadav | 01-Apr-2020
+ *
+ */
 
 @Repository
 @Qualifier("fakeDb")

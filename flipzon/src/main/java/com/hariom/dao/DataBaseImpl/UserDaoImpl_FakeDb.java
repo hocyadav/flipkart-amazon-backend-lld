@@ -9,6 +9,11 @@ import org.springframework.stereotype.Repository;
 
 import com.hariom.dao.UserDao;
 import com.hariom.entity.User;
+/**
+ * 
+ * @author Hariom Yadav | 01-Apr-2020
+ *
+ */
 
 @Repository
 @Qualifier("fakeDb")
@@ -18,10 +23,11 @@ private static Map<Integer, User> users;
 	static {									//dummy data
 		users = new HashMap<Integer, User>(){
 			{
-				put(1, new User(1, "name1", "email1@ca.cin"));
-				put(2, new User(2, "name2", "email2@ca.cin"));
-				put(3, new User(3, "name3", "email3@ca.cin"));
-				put(4, new User(4, "name4", "email4@ca.cin"));
+				put(1, new User(1, "Hariom Yadav", "Hariom_Yadav@ca.cin"));
+				put(2, new User(2, "Sanjay Kumar", "Sanjay_Kumar@ca.cin"));
+				put(3, new User(3, "Rajat Raj", "RajatRaj@ca.cin"));
+				put(4, new User(4, "Omprakash", "Omprakash@ca.cin"));
+				put(5, new User(5, "Chandan Yadav", "Chandan@ca.cin"));
 			}
 		};
 	}

@@ -2,19 +2,20 @@ package com.hariom.service;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.hariom.dao.OrderDao;
 import com.hariom.dao.UserDao;
 import com.hariom.entity.Order;
 import com.hariom.entity.User;
+/**
+ * 
+ * @author Hariom Yadav | 01-Apr-2020
+ *
+ */
 
 @Service
 public class UserService {

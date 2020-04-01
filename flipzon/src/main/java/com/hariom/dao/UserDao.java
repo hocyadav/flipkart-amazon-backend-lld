@@ -3,6 +3,11 @@ package com.hariom.dao;
 import java.util.Collection;
 
 import com.hariom.entity.User;
+/**
+ * 
+ * @author Hariom Yadav | 01-Apr-2020
+ *
+ */
 
 public interface UserDao {
 
