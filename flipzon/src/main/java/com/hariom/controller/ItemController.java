@@ -28,31 +28,50 @@ public class ItemController {
 	@Autowired
 	private ItemService itemServiceObj;
 	
+	/**
+	 * Get all Item
+	 * @return list of Item
+	 */
 	@RequestMapping(method = RequestMethod.GET)
 	public Collection<Item> getAllItems(){
         return this.itemServiceObj.getAllItems();
     }
 	
+	/**
+	 * Get Item by item id
+	 * @param id
+	 * @return Item
+	 */
 	@RequestMapping(value = "/{item_id}", 
 					method = RequestMethod.GET)
 	public Item getItemById(@PathVariable("item_id") int id){
         return this.itemServiceObj.getItemById(id); 
     }
 	
+	/**
+	 * Remove an Item from Db
+	 * @param id
+	 */
 	@RequestMapping(value = "/{item_id}",
 					method = RequestMethod.DELETE)
 	public void removeItemById(@PathVariable("item_id") int id) {
         this.itemServiceObj.removeItemById(id);
     }
 	
-	//update old Item
+	/**
+	 * Update old Item
+	 * @param item
+	 */
 	@RequestMapping(method = RequestMethod.PUT, 
 					consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void updateItem(@RequestBody Item item){
     	this.itemServiceObj.updateItem(item);
     }
 	
-	//adding new Item
+	/**
+	 * Add new Item
+	 * @param item
+	 */
     @RequestMapping(method = RequestMethod.POST, 
     				consumes = MediaType.APPLICATION_JSON_VALUE)
     public void insertItem(@RequestBody Item item){
