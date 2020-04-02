@@ -34,6 +34,7 @@ public class ItemController {
 	 */
 	@RequestMapping(method = RequestMethod.GET)
 	public Collection<Item> getAllItems(){
+		System.out.println("getAllItems called...");
         return this.itemServiceObj.getAllItems();
     }
 	
