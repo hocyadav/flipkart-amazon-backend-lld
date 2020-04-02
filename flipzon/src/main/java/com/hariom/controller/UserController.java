@@ -29,29 +29,51 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	/**
+	 * Get all User
+	 * @return list of User
+	 */
 	@RequestMapping(method = RequestMethod.GET)
 	public Collection<User> getAllUser(){
         return userService.getAllUser();
     }
 	
+	/**
+	 * Get User by user id
+	 * @param id
+	 * @return User
+	 */
 	@RequestMapping(value = "/{user_id}", 
 					method = RequestMethod.GET)
 	public User getUserById(@PathVariable("user_id") int id) {
 		return userService.getUserById(id);
 	}
 	
+	/**
+	 * Update old User
+	 * @param user
+	 */
 	@RequestMapping(method = RequestMethod.PUT, 
 					consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void updateUser(@RequestBody User user) {
 		userService.updateUser(user);
 	}
 	
+	/**
+	 * Insert new User
+	 * @param user
+	 */
 	@RequestMapping(method = RequestMethod.POST, 
 					consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void insertUser(@RequestBody User user) {
 		userService.insertUser(user);
 	}
 	
+	/**
+	 * Get all Order of a given User
+	 * @param id
+	 * @return list of Order
+	 */
 	@RequestMapping(value = "/{user_id}/order", 
 					method = RequestMethod.GET)
 	public Collection<Order> getAllUserOrders(@PathVariable("user_id") int id){
