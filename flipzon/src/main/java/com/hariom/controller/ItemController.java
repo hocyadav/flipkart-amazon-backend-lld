@@ -57,6 +57,7 @@ public class ItemController {
 	@RequestMapping(value = "/{item_id}",
 					method = RequestMethod.DELETE)
 	public void removeItemById(@PathVariable("item_id") int id) {
+		System.out.println("removeItemById called...");
         this.itemServiceObj.removeItemById(id);
     }
 	
