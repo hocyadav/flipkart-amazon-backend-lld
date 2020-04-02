@@ -46,6 +46,7 @@ public class ItemController {
 	@RequestMapping(value = "/{item_id}", 
 					method = RequestMethod.GET)
 	public Item getItemById(@PathVariable("item_id") int id){
+		System.out.println("getItemById called...");
         return this.itemServiceObj.getItemById(id); 
     }
 	
