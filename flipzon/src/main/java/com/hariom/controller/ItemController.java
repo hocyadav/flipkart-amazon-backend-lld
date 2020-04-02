@@ -68,6 +68,7 @@ public class ItemController {
 	@RequestMapping(method = RequestMethod.PUT, 
 					consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void updateItem(@RequestBody Item item){
+		System.out.println("updateItem called...");
     	this.itemServiceObj.updateItem(item);
     }
 	
@@ -78,6 +79,7 @@ public class ItemController {
     @RequestMapping(method = RequestMethod.POST, 
     				consumes = MediaType.APPLICATION_JSON_VALUE)
     public void insertItem(@RequestBody Item item){
+    	System.out.println("insertItem called...");
         this.itemServiceObj.insertItem(item);
     }
 	
