@@ -26,6 +26,10 @@ public class ItemService {
 	@Autowired
 	private QuantityService quantityService;
 	
+	/**
+	 * get all items from Db
+	 * @return list of Item
+	 */
 	public Collection<Item> getAllItems(){
         return this.itemDaoObj.getAllItems();
     }
@@ -34,9 +38,12 @@ public class ItemService {
         return this.itemDaoObj.getItemById(id); 
     }
 	
-	//remove item
-	//1. remove from quantity db
-	//2. remove from item db
+	/**
+	 * Remove an Item from Db
+	 * 1. remove from quantity db
+	 * 2. remove from item db
+	 * @param id
+	 */
 	public void removeItemById(int id) {
 		
 		quantityService.removeQuantity(id);
@@ -44,15 +51,20 @@ public class ItemService {
         this.itemDaoObj.removeItemById(id);
     }
 	
-	//update old item
+	/**
+	 * update old item
+	 * @param item
+	 */
 	public void updateItem(Item item){
     	this.itemDaoObj.updateItem(item);
     }
 	
-	//add new item
-	//1. insert into quantity db
-	//2. insert into item db
-	//test
+	/**
+	 * add new item
+	 * 1. insert into quantity db
+	 * 2. insert into item db
+	 * @param item
+	 */
 	public void insertItem(Item item){
 		
 		Quantity qq = new Quantity(item.getItemId(), 1);//for new item default quantity is 1

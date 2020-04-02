@@ -21,18 +21,29 @@ public class OrderService {
 	@Qualifier("fakeDb")
 	private OrderDao orderDao;
 	
+	/**
+	 * Get All Order from Db
+	 * @return list of Order
+	 */
 	public Collection<Order> getAllOrders(){
 		return orderDao.getAllOrders();
 	}
 	
-	
+	/**
+	 * Get Order by order id
+	 * @param id
+	 * @return Order
+	 */
 	public Order getOrderById(int id) {
 		return orderDao.getOrderById(id);
 	}
 	
-	//new order
-	//1. check for quantity count : if 0 return out of stock and dont add, 
-	//else return item with left quatity
+	/**
+	 * New Order
+	 * 1. check for quantity count : if 0 return out of stock and don't add, 
+	 * else return item with left quantity
+	 * @param order
+	 */
 	public void insertOrder(Order order) {
 		orderDao.insertOrder(order);
 	}
