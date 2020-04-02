@@ -27,27 +27,46 @@ public class UserService {
 	@Autowired
 	private OrderService orderService;
 	
+	/**
+	 * Get all User
+	 * @return list of User
+	 */
 	public Collection<User> getAllUser(){
         return userDao.getAllUser();
     }
 	
+	/**
+	 * get user by user id
+	 * @param id
+	 * @return User
+	 */
 	public User getUserById(int id) {
 		return userDao.getUserById(id);
 	}
 	
-	//update old User
+	/**
+	 * Update old User
+	 * @param user
+	 */
 	public void updateUser(User user) {
 		userDao.updateUser(user);
 	}
 	
-	//add new user
+	/**
+	 * add new user
+	 * @param user
+	 */
 	public void insertUser(User user) {
 		userDao.insertUser(user);
 	}
 	
-	//get all orders
-	//1.map 1: get all order
-	//search user id and save in map2
+	/**
+	 * get a given user get all orders
+	 * 1. list1: get all order
+	 * 2. search user id and save in list2
+	 * @param searchUserid
+	 * @return
+	 */
 	public Collection<Order> getAllUserOrders(int searchUserid){
 		Collection<Order> ordersList1 = orderService.getAllOrders();//this is list obj not map obj
 		
