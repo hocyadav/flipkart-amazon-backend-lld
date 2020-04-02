@@ -11,6 +11,10 @@ import java.util.Random;
 
 public class DateTimeUtil {
 	
+	/**
+	 * order date = Current date and time
+	 * @return Date and time
+	 */
 	public static String orderDateTime() {
 		LocalDateTime myDateObj = LocalDateTime.now();  
 	    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("E, MMM dd yyyy HH:mm:ss");  
@@ -20,6 +24,10 @@ public class DateTimeUtil {
 	    return formattedDate;
 	}
 	
+	/**
+	 * delivery date = next any date between 0-10
+	 * @return Expected : Date 
+	 */
 	public static String deliveryDateTime() {
 		Random randObj = new Random(); 
 		int randomNumber = randObj.nextInt(10); 

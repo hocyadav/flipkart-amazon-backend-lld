@@ -1,6 +1,6 @@
 package com.hariom.util;
 /**
- * 
+ * Payment mode
  * @author Hariom Yadav | 01-Apr-2020
  *
  */
