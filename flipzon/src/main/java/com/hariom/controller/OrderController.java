@@ -25,17 +25,30 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 	
+	/**
+	 * Get all Order
+	 * @return list of Order
+	 */
 	@RequestMapping(method = RequestMethod.GET)
 	public Collection<Order> getAllOrders(){
 		return orderService.getAllOrders();
 	}
 	
+	/**
+	 * get Order by order id
+	 * @param id
+	 * @return Order
+	 */
 	@RequestMapping(value = "/{order_id}", 
 					method = RequestMethod.GET)
 	public Order getOrderById(@PathVariable("order_id") int id) {
 		return orderService.getOrderById(id);
 	}
 	
+	/**
+	 * Insert new Order
+	 * @param order
+	 */
 	@RequestMapping(method = RequestMethod.POST, 
 					consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void insertOrder(@RequestBody Order order) {
