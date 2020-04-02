@@ -25,18 +25,30 @@ public class QuantityController {
 	@Autowired
 	private QuantityService quantityService;
 	
+	/**
+	 * Get all Quantity
+	 * @return list of Quantity
+	 */
 	@RequestMapping(method = RequestMethod.GET)
 	public Collection<Quantity> getAllQuantity(){
         return this.quantityService.getAllQuantity();
     }
 	
+	/**
+	 * Get Quantity by quantity id
+	 * @param id
+	 * @return Quantity
+	 */
 	@RequestMapping(value = "/{id}", 
 					method = RequestMethod.GET)
 	public Quantity getQuantityById(@PathVariable("id") int id){
         return this.quantityService.getQuantityById(id); 
     }
 	
-	//update old Quantity
+	/**
+	 * update old Quantity
+	 * @param quan
+	 */
 	@RequestMapping(method = RequestMethod.PUT,
 					consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void updateQuantity(@RequestBody Quantity quan) {
