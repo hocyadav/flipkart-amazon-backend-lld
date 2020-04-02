@@ -52,6 +52,7 @@ public class ItemService {
 	//add new item
 	//1. insert into quantity db
 	//2. insert into item db
+	//test
 	public void insertItem(Item item){
 		
 		Quantity qq = new Quantity(item.getItemId(), 1);//for new item default quantity is 1
