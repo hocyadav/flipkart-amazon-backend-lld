@@ -6,16 +6,20 @@ import java.util.Map;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hariom.entity.ApiStatus;
 import com.hariom.entity.Order;
 import com.hariom.entity.User;
 import com.hariom.service.UserService;
+import com.hariom.util.Status;
 /**
  * 
  * @author Hariom Yadav | 01-Apr-2020
@@ -55,8 +59,10 @@ public class UserController {
 	 */
 	@RequestMapping(method = RequestMethod.PUT, 
 					consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void updateUser(@RequestBody User user) {
+	public ResponseEntity<ApiStatus> updateUser(@RequestBody User user) {
 		userService.updateUser(user);
+		return new ResponseEntity<ApiStatus>(new ApiStatus("updateUser", Status.SUCCESS), 
+											HttpStatus.OK);
 	}
 	
 	/**
@@ -65,8 +71,10 @@ public class UserController {
 	 */
 	@RequestMapping(method = RequestMethod.POST, 
 					consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void insertUser(@RequestBody User user) {
+	public ResponseEntity<ApiStatus> insertUser(@RequestBody User user) {
 		userService.insertUser(user);
+		return new ResponseEntity<ApiStatus>(new ApiStatus("insertUser", Status.SUCCESS), 
+				HttpStatus.OK);
 	}
 	
 	/**
